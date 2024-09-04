@@ -4,17 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Document</title>
+    <title>{{ .Title }}</title>
   </head>
   <body>
-  <ul>
-    {{ range (where .Pages "Section" "blog") }}
-    <li>
-      <a href="{{ .RelPermalink }}">
-        {{ .Title }}
-      </a>
-    </li>
-    {{ end }}
-  </ul>
+    <h1>{{ .Title }}</h1>
+    <p class="date">{{ .Date }}</p>
+    <p class="description">{{ .Params.description }}</p>
+    <article class="content">
+      {{ .Content }}
+    </article>
   </body>
 </html>
